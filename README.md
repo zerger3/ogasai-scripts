@@ -3,4 +3,4 @@ scripts for ogasai https://www.ownedcore.com/forums/world-of-warcraft/world-of-w
 
 
 boardship script example:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/q9LEix-55TE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/q9LEix-55TE
