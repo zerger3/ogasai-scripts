@@ -3,6 +3,7 @@ script_boardship = {
    just_left_ship = false,
    is_travel_done = false,
    sent_to_hopOnSpot = false,
+   boarded_id = nil,	
    boarded_mapID = "0"
 }
 
@@ -634,6 +635,7 @@ function script_boardship:run()
 		--deck coord in uc coord
 			Move( 1366,-4634,53)
 			self.went_on_ship = true
+			self.boarded_id = 'OGtoGG'
 			self.boarded_mapID = GetMapID()
 		end
 	end
@@ -704,6 +706,7 @@ function script_boardship:run()
 	self.went_on_ship == true and 
 	self.just_left_ship == false and 
 	self.boarded_mapID ~= 33 and 
+	self.boarded_id == 'OGtoGG' and
 	OG2_ship_back_isVis == false and OG2_ship_front_isVis == false and OG2_ship_mid_isVis == true and -- add another for save measure  whic his faar away
 	GetMapID() ~= 33  then 
 		Move(-11.62,-7.69 ,-16.15) 
