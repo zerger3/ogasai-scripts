@@ -1,4 +1,5 @@
 Ogasai is a free bot wow 1.12 and TBC client.
+
 https://discord.gg/yFW2T4
 
 http://darkenedlinux.com/ogasai/
@@ -7,6 +8,8 @@ https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-se
 
 more scripts:
 https://github.com/Logitech2k17/ogasaiClassic
+
+------------------------------------------------------------------------------------------------------------
 
 boardship script example:
 https://www.youtube.com/embed/q9LEix-55TE
