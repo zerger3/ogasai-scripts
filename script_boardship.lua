@@ -3,6 +3,7 @@ script_boardship = {
    just_left_ship = false,
    is_travel_done = false,
    sent_to_hopOnSpot = false,
+   sent_to_tram_instance = false,
    boarded_id = nil,	
    boarded_mapID = "0"
 }
@@ -336,7 +337,25 @@ function script_boardship:run()
 	testz2 = 32.11
 	local GG2_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
 	
+	-- stormwind to ironforge tram front
+	testx1 = 4.36
+	testy1 = 2464.80
+	testz1 = -13.86 
+	testx2 = 4.36
+	testy2 = 2464.80
+	testz2 = 1
+	local SW_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
 	
+	-- stormwind to ironforge tram back
+	testx1 = 4.26 
+	testy1 = 2475.86
+	testz1 = -13.86  
+	testx2 = 4.26
+	testy2 = 2475.86
+	testz2 = 1
+	local SW_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	
+		
 
 	
 	--/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\\/\/\/\/\ boat checks end
@@ -501,6 +520,28 @@ function script_boardship:run()
 			Move(1360.08, -4638.41, 53.84) -- hop on spot
 		end
 	end			
+	
+	-- stormwind to ironforge get into tram area
+	if self.sent_to_tram_instance == false and self.just_left_ship == false then  
+		local distance1 = GetDistance3D(-8395,566,91,my_x, my_y, my_z) -- left measurement point 
+		local distance2 = GetDistance3D(-8388,572,91,my_x, my_y, my_z) -- right measurement point 
+		--ToConsole(distance1+distance2)
+		if distance1 + distance2 < 9.5 then 
+			DEFAULT_CHAT_FRAME:AddMessage("Travel script started"); 
+			self.sent_to_tram_instance = true
+			Move(-8351,518,91) -- zone into tram instance from sw
+		end
+	end			
+	
+	-- stormwind to ironforge get ready to board
+	if self.sent_to_hopOnSpot == false and self.just_left_ship == false and 
+		GetDistance2D(my_x,my_y,68.19,2490.91 ) < 2 then 
+			DEFAULT_CHAT_FRAME:AddMessage("Travel script inside tram instance started"); 
+			self.sent_to_hopOnSpot = true
+			Move(11.89, 2490.54, -3.91) -- hop on spot
+		
+	end			
+		
     --######################### board ship
 	
 	-- theraMore ship boarding
@@ -516,7 +557,7 @@ function script_boardship:run()
 	end
 		
 	-- menethil to theramore ship boarding
-	if self.sent_to_hopOnSpot == true and -- did we go to the hop on spot ?	
+	if self.sent_to_hopOnSpot == true and -- did we go to the hop on spot ?	 
 		MT_ship_back_isVis == false and MT_ship_front_isVis == false then
 	-- when onboard the ship the coords change 
 		if	self.went_on_ship == false and GetDistance2D(my_x,my_y,-3896, -598) < 2 then -- if i am at menethil boarding spot
@@ -675,6 +716,18 @@ function script_boardship:run()
 			self.boarded_mapID = GetMapID()
 		end
 	end	
+	
+	-- stormwind to ironforge tram
+	if self.sent_to_hopOnSpot == true and -- did we go to the hop on spot ?	
+		SW_ship_back_isVis == false and SW_ship_front_isVis == false  then
+	-- when onboard the ship the coords change 
+		if	self.went_on_ship == false and GetDistance2D(my_x,my_y,11.89, 2490.54) < 2 then -- if i am at  boarding spot
+		--deck coord in uc coord
+			Move(4.40, 2490.51, -3.66)
+			self.went_on_ship = true
+			self.boarded_mapID = GetMapID()
+		end
+	end		
 	
 
 -- ################# get to mid of ship
