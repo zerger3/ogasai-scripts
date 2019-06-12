@@ -1,6 +1,6 @@
 Ogasai is a free bot for wow 1.12 and TBC 
 For more info check out:
-https://discord.gg/yFW2T4 http://darkenedlinux.com/ogasai/ [GitHub](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-programs/600785-ogasai-d-j-vu-wow-1-12-1-vanilla-bot.html)
+ http://darkenedlinux.com/ogasai/ [Discord](https://discord.gg/yFW2T4) [ownedcore thread](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-programs/600785-ogasai-d-j-vu-wow-1-12-1-vanilla-bot.html)
 
 more scripts:
 https://github.com/Logitech2k17/ogasaiClassic
