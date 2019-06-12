@@ -3,10 +3,9 @@ script_zerger_helper_lib = {
  checkTime = 0,
  numNodes = 0,
 }
---drawline: normale dL with worldtoscreen check
+--drawline: normal drawLline with worldToScreen check
 --drawLineInfront/left/right: draws a line that is 'magnitude' long from the players xyz 
---drawLineInfrontTarget
---drawLineInfrontAllObjects: magnitude = length of the line(if 0 then it is aggrorange), onlymoving: true or false
+--drawLineInfrontAllObjects: magnitude = length of the line (if 0 then it is aggrorange), onlymoving: true or false
 --drawAggroCircles: draws aggro circles around mobs
 --playerCoord: my_x, my_y, my_z, my_angle
 --targetCoord()
