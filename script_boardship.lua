@@ -16,7 +16,7 @@ board ship
 go to center of ship
 leave ship
 leave dock
-todo: do the check only if we are in "mapid", randomize spots,timer so not all bots move synchrone :d 
+todo: if->swtram,do the check only if we are in "mapid", randomize spots, timer so not all bots move synchrone :d 
 --]]
 
 local function GetDistance2D(_1x, _1y, _2x, _2y)
@@ -49,298 +49,107 @@ function script_boardship:run()
 	-- Menethil to theramore boat back check
 	local MT_ship_back_isVis, _hx, _hy, _hz = Raycast(-3937, -611, 11, -3907, -641, 11);
 
-	
 	-- Menethil to auberdine boat front check
 	local MT2_ship_front_isVis, _hx, _hy, _hz = Raycast(-3739.80, -525.26, -1.77, -3739.80, -525.26, -1.77+20);
 
 	-- Menethil to auberdine boat back check
-	testx1 =  -3690.05
-	testy1 = -614.16
-	testz1 = -1.59
-	testx2 =  -3690.05
-	testy2 =  -614.16
-	testz2 = -1.59+10
-	local MT2_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local MT2_ship_back_isVis, _hx, _hy, _hz = Raycast(-3690.05, -614.16, -1.59, -3690.05, -614.16, -1.59+10);
 	
 	-- auberdine to Menethil boat front check
-	testx1 =  6420.35
-	testy1 = 869.97
-	testz1 = -1.52
-	testx2 =  6420.35
-	testy2 =  869.97
-	testz2 = -1.52+10
-	local AUB_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local AUB_ship_front_isVis, _hx, _hy, _hz = Raycast(6420.35, 869.97, -1.52, 6420.35, 869.97, -1.52+10);
 
 	-- auberdine to Menethil boat back check
-	testx1 =  6392.20
-	testy1 = 781.35
-	testz1 = -1.58
-	testx2 =  6392.20
-	testy2 = 781.35
-	testz2 = -1.58+10
-	local AUB_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local AUB_ship_back_isVis, _hx, _hy, _hz = Raycast(6392.20, 781.35, -1.58, 6392.20, 781.35, -1.58+10);
 	
 	-- auberdine to darnassus boat front check
-	testx1 =   6609.13
-	testy1 = 816.42
-	testz1 = -1.61
-	testx2 =   6609.13
-	testy2 =  816.42
-	testz2 = -1.61+20
-	local AUB2_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local AUB2_ship_front_isVis, _hx, _hy, _hz = Raycast(6609.13, 816.42, -1.61, 6609.13, 816.42, -1.61+20);
 
 	-- auberdine to darnassus boat back check
-	testx1 =  6582.38
-	testy1 = 717.27
-	testz1 = -1.58
-	testx2 =  6582.38
-	testy2 = 717.27
-	testz2 = -1.58+20
-	local AUB2_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local AUB2_ship_back_isVis, _hx, _hy, _hz = Raycast(6582.38, 717.27, -1.58, 6582.38, 717.27, -1.58+20);
 	
 	-- darnassus to auberdine boat front check
-	testx1 =  8534.38
-	testy1 =  967.19
-	testz1 = -1.60
-	testx2 =  8534.38
-	testy2 =  967.19
-	testz2 = -1.60+20
-	local DAR_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local DAR_ship_front_isVis, _hx, _hy, _hz = Raycast(8534.38, 967.19, -1.60, 8534.38, 967.19, -1.60+20);
 
 	-- darnassus to auberdine boat back check
-	testx1 =  8533.19
-	testy1 = 1068.95
-	testz1 = -1.61
-	testx2 =  8533.19
-	testy2 = 1068.95
-	testz2 = -1.61+20
-	local DAR_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local DAR_ship_back_isVis, _hx, _hy, _hz = Raycast(8533.19, 1068.95, -1.61, 8533.19, 1068.95, -1.61+20);
 	 	
 	-- ratchet to bootybay boat front check
-	testx1 =  -955.09
-	testy1 =  -3869.60
-	testz1 = -1.60
-	testx2 =  -955.09
-	testy2 =  -3869.60
-	testz2 = -1.60+20
-	local RAT_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local RAT_ship_front_isVis, _hx, _hy, _hz = Raycast(-955.09, -3869.60, -1.60, -955.09, -3869.60, -1.60+20);
 
 	-- ratchet to bootybay boat back check
-	testx1 = -1044.60
-	testy1 = -3820.80
-	testz1 = -1.61
-	testx2 = -1044.60
-	testy2 = -3820.80
-	testz2 = -1.61+20
-	local RAT_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local RAT_ship_back_isVis, _hx, _hy, _hz = Raycast(-1044.60, -3820.80, -1.61, -1044.60, -3820.80, -1.61+20);
 
 	-- bootybay to ratchet boat front check
-	testx1 =  -14222.22
-	testy1 =  564.94
-	testz1 = -1.60
-	testx2 =  -14222.22
-	testy2 =  564.94
-	testz2 = -1.60+20
-	local BB_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local BB_ship_front_isVis, _hx, _hy, _hz = Raycast(-14222.22, 564.94, -1.60, -14222.22, 564.94, -1.60+20);
 
 	-- bootybay to ratchet  boat back check
-	testx1 = -14319.50
-	testy1 = 597.19
-	testz1 = -1.61
-	testx2 = -14319.50
-	testy2 = 597.19
-	testz2 = -1.61+20
-	local BB_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local BB_ship_back_isVis, _hx, _hy, _hz = Raycast(-14319.50, 597.19, -1.61, -14319.50, 597.19, -1.61+20);
 	
-	--++ Zeppellins
-	
+	--++ Zeppellins ++
 	-- Undercity to Ogrimmar  Zeppellin front check
-	testx1 = 2068.12 
-	testy1 = 289.95
-	testz1 = 97.53
-	testx2 = 2068.8  
-	testy2 = 293.89
-	testz2 = 97.53
-	local UC1_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local UC1_ship_front_isVis, _hx, _hy, _hz = Raycast(2068.12, 289.95, 97.53, 2068.8, 293.89, 97.53);
 	
 	-- Undercity to Ogrimmar  Zeppellin mid check
-	testx1 = 2066.87     
-	testy1 = 290.77
-	testz1 = 97.53 
-	testx2 = 2067.98     
-	testy2 = 296.67
-	testz2 = 97.53
-	local UC1_ship_mid_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);	
-	
+	local UC1_ship_mid_isVis, _hx, _hy, _hz = Raycast(2066.87, 290.77, 97.53, 2067.98, 296.67, 97.53);	
 	
 	-- Undercity to Ogrimmar  Zeppellin back check
-	testx1 = 2065.64  
-	testy1 = 290.43
-	testz1 = 97.53
-	testx2 = 2066.17  
-	testy2 = 294.4
-	testz2 = 97.53
-	local UC1_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local UC1_ship_back_isVis, _hx, _hy, _hz = Raycast(2065.64, 290.43, 97.53, 2066.17, 294.4, 97.53);
 	
 	-- Undercity to Gromgol  Zeppellin front check
-	testx1 = 2057      
-	testy1 = 238.25
-	testz1 = 100.27
-	testx2 = 2056.09      
-	testy2 = 234.36
-	testz2 = 100.27
-	local UC2_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local UC2_ship_front_isVis, _hx, _hy, _hz = Raycast(2057, 238.25, 100.27, 2056.09, 234.36, 100.27);
 	
 	-- Undercity to Gromgol  Zeppellin mid check
-	testx1 = 2057.87     
-	testy1 = 237.41 
-	testz1 = 100.27
-	testx2 = 2056.93      
-	testy2 = 231.48
-	testz2 = 100.27
-	local UC2_ship_mid_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local UC2_ship_mid_isVis, _hx, _hy, _hz = Raycast(2057.87, 237.41, 100.27, 2056.93, 231.48, 100.27);
 	
 	-- Undercity to Gromgol  Zeppellin back check
-	testx1 = 2059.25      
-	testy1 = 237.79
-	testz1 = 100.27
-	testx2 = 2058.74      
-	testy2 = 233.82
-	testz2 = 100.27
-	local UC2_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local UC2_ship_back_isVis, _hx, _hy, _hz = Raycast(2059.25, 237.79, 100.27, 2058.74, 233.82, 100.27);
 	
 	-- Ogrimmar to Undercity   Zeppellin front check
-	testx1 = 1321.59      
-	testy1 = -4651.36
-	testz1 = 54.36
-	testx2 = 1315.65      
-	testy2 = -4652.21
-	testz2 = 54.36
-	local OG1_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local OG1_ship_front_isVis, _hx, _hy, _hz = Raycast(1321.59, -4651.36, 54.36, 1315.65, -4652.21, 54.36);
 	
-	-- Ogrimmar to Undercity   Zeppellin mid check
-	testx1 = 1321.01      
-	testy1 = -4652.77
-	testz1 = 54.37
-	testx2 = 1315.02     
-	testy2 = -4653.1
-	testz2 = 54.37 
-	local OG1_ship_mid_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
-	
+	-- Ogrimmar to Undercity   Zeppellin mid check  
+	local OG1_ship_mid_isVis, _hx, _hy, _hz = Raycast(1321.01, -4652.77, 54.37, 1315.02, -4653.1, 54.37);
 	
 	-- Ogrimmar to Undercity   Zeppellin back check
-	testx1 = 1320.68      
-	testy1 = -4654
-	testz1 = 54.17
-	testx2 = 1314.68      
-	testy2 = -4654.19
-	testz2 = 54.17
-	local OG1_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local OG1_ship_back_isVis, _hx, _hy, _hz = Raycast(1320.68, -4654, 54.17, 1314.68, -4654.19, 54.17);
 
 	-- Ogrimmar to Gromgol   Zeppellin front check
-	testx1 = 1362.16    
-	testy1 = -4638.04 
-	testz1 =  54.38
-	testx2 = 1366.95      
-	testy2 = -4634.43
-	testz2 = 54.38
-	local OG2_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local OG2_ship_front_isVis, _hx, _hy, _hz = Raycast(1362.16, -4638.04, 54.38, 1366.95, -4634.43, 54.38);
 
-	-- Ogrimmar to Gromgol   Zeppellin mid check
-	testx1 = 1363.03      
-	testy1 = -4635.89
-	testz1 = 54.41 
-	testx2 = 1367.74      
-	testy2 = -4632.17
-	testz2 =  54.41  
-	local OG2_ship_mid_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	-- Ogrimmar to Gromgol   Zeppellin mid check 
+	local OG2_ship_mid_isVis, _hx, _hy, _hz = Raycast(1363.03, -4635.89, 54.41, 1367.74, -4632.17, 54.41);
 	
 	-- Ogrimmar to Gromgol   Zeppellin back check
-	testx1 = 1360.98     
-	testy1 = -4636.46 
-	testz1 = 54.38
-	testx2 = 1365.01     
-	testy2 =  -4632.01
-	testz2 = 54.38
-	local OG2_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
-
+	local OG2_ship_back_isVis, _hx, _hy, _hz = Raycast(1360.98, -4636.46, 54.38, 1365.01, -4632.01, 54.38);
 
 	-- Gromgol to ogrimmar   Zeppellin front check
-	testx1 = -12449.89      
-	testy1 = 219.52
-	testz1 = 32.12
-	testx2 = -12454.73      
-	testy2 = 223.07
-	testz2 = 32.12
-	local GG1_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local GG1_ship_front_isVis, _hx, _hy, _hz = Raycast(-12449.89, 219.52, 32.12, -12454.73, 223.07, 32.12);
 	
 	-- Gromgol to ogrimmar   Zeppellin mid check
-	testx1 = -12451.58     
-	testy1 = 219.26 
-	testz1 = 32.14
-	testx2 = -12456.65   
-	testy2 = 222.47
-	testz2 = 32.14
-	local GG1_ship_mid_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local GG1_ship_mid_isVis, _hx, _hy, _hz = Raycast(-12451.58, 219.26, 32.14, -12456.65, 222.47, 32.14);
 	
 	-- Gromgol to ogrimmar   Zeppellin back check
-	testx1 = -12451.29      
-	testy1 = 217.85
-	testz1 = 32.12
-	testx2 = -12456.66     
-	testy2 = 220.53
-	testz2 = 32.12
-	local GG1_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local GG1_ship_back_isVis, _hx, _hy, _hz = Raycast(-12451.29, 217.85, 32.12, -12456.66, 220.53, 32.12);
 	
 	-- Gromgol to undercity   Zeppellin front check
-	testx1 = -12409.18      
-	testy1 = 205.49
-	testz1 = 32.51
-	testx2 = -12403.18   
-	testy2 = 205.56 
-	testz2 = 32.51
-	local GG2_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local GG2_ship_front_isVis, _hx, _hy, _hz = Raycast(-12409.18, 205.49, 32.51, -12403.18, 205.56, 32.51);
 	
 	-- Gromgol to undercity   Zeppellin mid check
-	testx1 = -12407.67      
-	testy1 =  206.7
-	testz1 = 32.16
-	testx2 = -12401.68      
-	testy2 =  207.1
-	testz2 = 32.16
-	local GG2_ship_mid_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local GG2_ship_mid_isVis, _hx, _hy, _hz = Raycast(-12407.67, 206.7, 32.16, -12401.68, 207.1, 32.16);
 	
 	-- Gromgol to undercity   Zeppellin back check
-	testx1 = -12409.15      
-	testy1 =  207.65
-	testz1 = 32.11
-	testx2 = -12403.17      
-	testy2 =  208.14
-	testz2 = 32.11
-	local GG2_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local GG2_ship_back_isVis, _hx, _hy, _hz = Raycast(-12409.15, 207.65, 32.11, -12403.17, 208.14, 32.11);
 	
+	-- ++ tram ++
 	-- stormwind to ironforge tram front
-	testx1 = 4.36
-	testy1 = 2464.80
-	testz1 = -13.86 
-	testx2 = 4.36
-	testy2 = 2464.80
-	testz2 = 1
-	local SW_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local SW_ship_front_isVis, _hx, _hy, _hz = Raycast(4.36, 2464.80, -13.86, 4.36, 2464.80, 1);
 	
 	-- stormwind to ironforge tram back
-	testx1 = 4.26 
-	testy1 = 2475.86
-	testz1 = -13.86  
-	testx2 = 4.26
-	testy2 = 2475.86
-	testz2 = 1
-	local SW_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local SW_ship_back_isVis, _hx, _hy, _hz = Raycast(4.26, 2475.86, -13.86, 4.26, 2475.86, 1);
 	
-		
-
 	
 	--/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\\/\/\/\/\ boat checks end
+	
 	
 	-- theraMore get ready to board
 	if self.sent_to_hopOnSpot == false and self.just_left_ship == false then 
