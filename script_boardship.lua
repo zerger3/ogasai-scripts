@@ -147,6 +147,12 @@ function script_boardship:run()
 	-- stormwind to ironforge tram back
 	local SW_ship_back_isVis, _hx, _hy, _hz = Raycast(4.26, 2475.86, -13.86, 4.26, 2475.86, 1);
 	
+	-- ironforge to stormwind tram front
+	local SW_ship_front_isVis, _hx, _hy, _hz = Raycast();
+	
+	-- ironforge to stormwind tram back
+	local SW_ship_back_isVis, _hx, _hy, _hz = Raycast();
+	
 	
 	--/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\\/\/\/\/\ boat checks end
 	
