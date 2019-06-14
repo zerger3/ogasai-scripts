@@ -44,32 +44,14 @@ function script_boardship:run()
 	local TM_ship_back_isVis, _hx, _hy,  _hz = Raycast(-4022, -4690, 11, -4042, -4710, 11);
 	
 	-- Menethil to theramore boat front check
-	testx1 =  -3854
-	testy1 =  -559
-	testz1 = 11
-	testx2 =  -3824
-	testy2 =  -589
-	testz2 = 11
-	local MT_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local MT_ship_front_isVis, _hx, _hy, _hz = Raycast(-3854, -559, 11, -3824, -589, 11);
 
 	-- Menethil to theramore boat back check
-	testx1 =  -3937
-	testy1 =  -611
-	testz1 = 11
-	testx2 =  -3907
-	testy2 =  -641
-	testz2 = 11
-	local MT_ship_back_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local MT_ship_back_isVis, _hx, _hy, _hz = Raycast(-3937, -611, 11, -3907, -641, 11);
 
 	
 	-- Menethil to auberdine boat front check
-	testx1 =  -3739.80
-	testy1 =  -525.26
-	testz1 = -1.77
-	testx2 =  -3739.80
-	testy2 =  -525.26
-	testz2 = -1.77+20
-	local MT2_ship_front_isVis, _hx, _hy, _hz = Raycast(testx1, testy1, testz1, testx2, testy2, testz2);
+	local MT2_ship_front_isVis, _hx, _hy, _hz = Raycast(-3739.80, -525.26, -1.77, -3739.80, -525.26, -1.77+20);
 
 	-- Menethil to auberdine boat back check
 	testx1 =  -3690.05
